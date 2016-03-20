@@ -7,6 +7,8 @@ import (
 func Test_config_parser_parses_dodin_ini_file(t *testing.T) {
 	iniFile := `[test]
 members=master[12]
+[test:vars]
+variable_name="variable_value"
 `;
 	config := ParseConfig(iniFile)
 	if len(config.Groups()) != 1 {
@@ -18,5 +20,8 @@ members=master[12]
 	}
 	if firstGroup.memberNamePattern != "master[12]" {
 		t.Error("Expected first pattern to be %s, but got %s instead", "master[12]", firstGroup.memberNamePattern)
+	}
+	if firstGroup.variables["variable_name"] != "variable_value" {
+		t.Error("Unexpected group variables", firstGroup.variables)
 	}
 }

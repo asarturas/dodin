@@ -4,10 +4,12 @@ import "github.com/asarturas/dodin/cloud"
 
 func BuildInventoryFrom(machines []cloud.Machine, config Config) Inventory {
 	inventory := Inventory{
-		groups: make(map[string]InventoryGroup),
+		groups: map[string]InventoryGroup{},
 	}
 	for _, groupConfig := range config.Groups() {
-		group := InventoryGroup{}
+		group := InventoryGroup{
+			Vars: groupConfig.Variables(),
+		}
 		for _, machine := range machines {
 			if groupConfig.MatchingMemberName(machine.Name()) {
 				group.Hosts = append(group.Hosts, machine.IP())

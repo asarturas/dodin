@@ -8,8 +8,8 @@ import (
 func Test_inventory_builder_turns_dodin_config_and_cloud_machines_into_inventory(t *testing.T) {
 	config := Config{
 		groups: []GroupConfig{
-			NewGroupConfig("test", "member[12]"),
-			NewGroupConfig("test2", "member9[23]"),
+			NewGroupConfig("test", "member[12]", map[string]string{"var1": "val1"}),
+			NewGroupConfig("test2", "member9[23]", map[string]string{"variable2": "val2"}),
 		},
 	}
 	machines := []cloud.Machine{
