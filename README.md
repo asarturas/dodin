@@ -97,7 +97,7 @@ Which is equivalent of the first one, but in dynamic format, expected by ansible
 ## How to install dodin?
 
 1. There is no binary distributed, so you have to have a golang runtime in order to use it.
-2. Download sources and compile it via `go get github.com/asarturas/dodin/main/dodin-digital-ocean`
+2. Download sources and compile it via `go get github.com/asarturas/dodin/cmd/dodin-digital-ocean`
 
 ## How to use dodin?
 
