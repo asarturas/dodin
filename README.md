@@ -1,3 +1,4 @@
+[![Circle CI](https://circleci.com/gh/asarturas/dodin/tree/master.svg?style=svg)](https://circleci.com/gh/asarturas/dodin/tree/master)
 # dodin - dynamic inventory provider for Ansible
 
 Currently only Digital Ocean is supported, but contributions for other providers are welcome.
@@ -18,13 +19,16 @@ then without script modification you would not be able to group nodes logically 
 master-01
 master-02
 master-03
+
 [master:vars]
 ansible_ssh_user=core
 ansible_python_interpreter="PATH=/home/core/bin:$PATH python"
+
 [minion]
 minion-01
 minion-02
 minion-03
+
 [minion:vars]
 ansible_ssh_user=core
 ansible_python_interpreter="PATH=/home/core/bin:$PATH python"
@@ -59,11 +63,14 @@ to match node name:
 ```
 [master]
 members=master\-[0-9]{2}
+
 [master:vars]
 ansible_ssh_user=core
 ansible_python_interpreter="PATH=/home/core/bin:$PATH python"
+
 [minion]
 members=minion\-[0-9]{2}
+
 [minion:vars]
 ansible_ssh_user=core
 ansible_python_interpreter="PATH=/home/core/bin:$PATH python"
@@ -96,20 +103,22 @@ Which is equivalent of the first one, but in dynamic format, expected by ansible
 
 ## How to install dodin?
 
-1. There is no binary distributed, so you have to have a golang runtime in order to use it.
-2. Download sources and compile it via `go get github.com/asarturas/dodin/cmd/dodin-digital-ocean`
+1. There is no binary distributed, so you have to have a golang runtime in order to use it;
+2. Download sources and compile it via `go get github.com/asarturas/dodin/cmd/dodin-digital-ocean`.
 
 ## How to use dodin?
 
 1. In your project directory create `dodin-digital-ocean.ini` file with content like this:
+   
    ```
    [cluster]
    members=.*
    [cluster:vars]
    sample_variable="sample value"
    ```
-2. Export your digital ocean api token like this `export DO_API_TOKEN=1234567890`
-3. Check dodin works correctly via `$GOPATH/bin/dodin-digital-ocean`, it should output json with all your nodes in all group
-4. Ping cluster hosts via `ansible cluster -m ping -i "$GOPATH/bin/dodin-digital-ocean"` 
+   
+2. Export your digital ocean api token like this `export DO_API_TOKEN=1234567890`;
+3. Check dodin works correctly via `$GOPATH/bin/dodin-digital-ocean`, it should output json with all your nodes in all group;
+4. Ping cluster hosts via `ansible cluster -m ping -i "$GOPATH/bin/dodin-digital-ocean"`.
 
 [dynamic_inventories]: http://docs.ansible.com/ansible/intro_dynamic_inventory.html
