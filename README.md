@@ -4,6 +4,13 @@
 Currently only Digital Ocean is supported, but contributions for other providers are welcome.
 Read at the end for a brief guide of how to introduce new providers.
 
+Features:
+- [x] Group droplets by name with regular expression;
+- [x] Unlimited custom groups;
+- [x] Add variables to groups;
+- [ ] Display full information for each droplet with `--host hostname` flag (by droplet name);
+- [ ] Ability to generate static inventory file with extra flag.
+
 ## What is it for?
 
 Ansible provides neat option to use to use [dynamic inventories][dynamic_inventories], instead of static inventory files.
@@ -108,11 +115,12 @@ Which is equivalent of the first one, but in dynamic format, expected by ansible
 
 ## How to use dodin?
 
-1. In your project directory create `dodin-digital-ocean.ini` file with content like this:
+1. In your project directory create `dodin-digital-ocean.ini` file with content like this (regular expression `.*` matches any string, which adds all the nodes into single cluster group):
    
    ```
    [cluster]
    members=.*
+   
    [cluster:vars]
    sample_variable="sample value"
    ```
