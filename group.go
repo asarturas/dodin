@@ -2,7 +2,6 @@ package dodin
 
 import (
 	"github.com/asarturas/dodin/cloud"
-	"github.com/gogo/protobuf/test/group"
 )
 
 func FromMatchingMachines(config GroupConfig, machines []cloud.Machine) Group {
