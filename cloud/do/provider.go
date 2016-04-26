@@ -27,9 +27,9 @@ func (t *TokenSource) Token() (*oauth2.Token, error) {
 	return token, nil
 }
 
-func (this DigitalOceanProvider) GetMachines() []cloud.Machine {
+func (provider DigitalOceanProvider) GetMachines() []cloud.Machine {
 	tokenSource := &TokenSource{
-		AccessToken: this.apiToken,
+		AccessToken: provider.apiToken,
 	}
 	oauthClient := oauth2.NewClient(oauth2.NoContext, tokenSource)
 	client := godo.NewClient(oauthClient)

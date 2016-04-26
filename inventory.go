@@ -13,11 +13,11 @@ type Inventory struct {
 	groups map[string]InventoryGroup
 }
 
-func (this Inventory) String() string {
+func (inventory Inventory) String() string {
 	result := ""
-	numberOfGroups := len(this.groups)
+	numberOfGroups := len(inventory.groups)
 	currentGroup := 1
-	for name, group := range this.groups {
+	for name, group := range inventory.groups {
 		groupJson, _ := json.Marshal(group)
 		result += "\"" + name + "\":" + string(groupJson[:])
 		if currentGroup != numberOfGroups {

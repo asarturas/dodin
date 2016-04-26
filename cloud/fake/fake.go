@@ -12,6 +12,6 @@ type FakeProvider struct {
 	machines []cloud.Machine
 }
 
-func (this FakeProvider) GetMachines() []cloud.Machine {
-	return this.machines
+func (provider FakeProvider) GetMachines() []cloud.Machine {
+	return provider.machines
 }

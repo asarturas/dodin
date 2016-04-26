@@ -16,10 +16,10 @@ type CloudMachine struct {
 	name, ip string
 }
 
-func (this CloudMachine) Name() string {
-	return this.name
+func (machine CloudMachine) Name() string {
+	return machine.name
 }
 
-func (this CloudMachine) IP() string {
-	return this.ip
+func (machine CloudMachine) IP() string {
+	return machine.ip
 }

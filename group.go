@@ -2,6 +2,7 @@ package dodin
 
 import (
 	"github.com/asarturas/dodin/cloud"
+	"github.com/gogo/protobuf/test/group"
 )
 
 func FromMatchingMachines(config GroupConfig, machines []cloud.Machine) Group {
@@ -23,14 +24,14 @@ type Group struct {
 	variables map[string]string
 }
 
-func (this Group) Name() string {
-	return this.name
+func (group Group) Name() string {
+	return group.name
 }
 
-func (this Group) Members() []cloud.Machine {
-	return this.members
+func (group Group) Members() []cloud.Machine {
+	return group.members
 }
 
-func (this Group) Variables() map[string]string {
-	return this.variables
+func (group Group) Variables() map[string]string {
+	return group.variables
 }

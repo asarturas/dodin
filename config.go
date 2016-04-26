@@ -4,6 +4,6 @@ type Config struct {
 	groups []GroupConfig
 }
 
-func (this Config) Groups() []GroupConfig {
-	return this.groups
+func (config Config) Groups() []GroupConfig {
+	return config.groups
 }

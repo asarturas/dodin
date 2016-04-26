@@ -18,14 +18,14 @@ type GroupConfig struct {
 	variables map[string]string
 }
 
-func (this GroupConfig) Name() string {
-	return this.name
+func (config GroupConfig) Name() string {
+	return config.name
 }
 
-func (this GroupConfig) MatchingMemberName(name string) bool {
-	return this.matcher.MatchString(name)
+func (config GroupConfig) MatchingMemberName(name string) bool {
+	return config.matcher.MatchString(name)
 }
 
-func (this GroupConfig) Variables() map[string]string {
-	return this.variables
+func (config GroupConfig) Variables() map[string]string {
+	return config.variables
 }

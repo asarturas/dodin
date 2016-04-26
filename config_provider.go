@@ -10,15 +10,15 @@ type FakeConfigProvider struct {
 	contents string
 }
 
-func (this FakeConfigProvider) Get() Config {
-	return ParseConfig(this.contents)
+func (provider FakeConfigProvider) Get() Config {
+	return ParseConfig(provider.contents)
 }
 
 type ConfigFileProvider struct {
 	Filename string
 }
 
-func (this ConfigFileProvider) Get() Config {
-	contents, _ := ioutil.ReadFile(this.Filename)
+func (provider ConfigFileProvider) Get() Config {
+	contents, _ := ioutil.ReadFile(provider.Filename)
 	return ParseConfig(string(contents[:]))
 }
