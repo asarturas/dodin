@@ -8,7 +8,7 @@ type Machine interface {
 func GetCloudMachine(name, ip string) Machine {
 	return CloudMachine{
 		name: name,
-		ip: ip,
+		ip:   ip,
 	}
 }
 

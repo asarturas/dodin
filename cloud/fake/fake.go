@@ -2,7 +2,7 @@ package fake
 
 import "github.com/asarturas/dodin/cloud"
 
-func Provider(machines... cloud.Machine) FakeProvider {
+func Provider(machines ...cloud.Machine) FakeProvider {
 	return FakeProvider{
 		machines: machines,
 	}

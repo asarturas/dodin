@@ -5,17 +5,17 @@ import "regexp"
 func NewGroupConfig(name, memberNamePattern string, variables map[string]string) GroupConfig {
 	matcher, _ := regexp.Compile(memberNamePattern)
 	return GroupConfig{
-		name: name,
+		name:              name,
 		memberNamePattern: memberNamePattern,
-		matcher: matcher,
-		variables: variables,
+		matcher:           matcher,
+		variables:         variables,
 	}
 }
 
 type GroupConfig struct {
 	name, memberNamePattern string
-	matcher *regexp.Regexp
-	variables map[string]string
+	matcher                 *regexp.Regexp
+	variables               map[string]string
 }
 
 func (this GroupConfig) Name() string {

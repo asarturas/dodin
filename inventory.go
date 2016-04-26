@@ -5,8 +5,8 @@ import (
 )
 
 type InventoryGroup struct {
-	Hosts []string `json:"hosts"`
-	Vars map[string]string `json:"vars"`
+	Hosts []string          `json:"hosts"`
+	Vars  map[string]string `json:"vars"`
 }
 
 type Inventory struct {
