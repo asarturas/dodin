@@ -1,8 +1,8 @@
 package dodin
 
 import (
-	"testing"
 	"github.com/asarturas/dodin/cloud"
+	"testing"
 )
 
 func Test_inventory_builder_turns_dodin_config_and_cloud_machines_into_inventory(t *testing.T) {

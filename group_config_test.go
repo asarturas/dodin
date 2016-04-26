@@ -5,7 +5,7 @@ import (
 )
 
 func Test_group_config_matches_machine_name_with_member_name_pattern(t *testing.T) {
-	config := NewGroupConfig("test", "member[12]", map[string]string {"var": "value", "var2": "v2"})
+	config := NewGroupConfig("test", "member[12]", map[string]string{"var": "value", "var2": "v2"})
 	if config.MatchingMemberName("member1") == false {
 		t.Errorf("Expected %s to be matching %s", "member1", config.memberNamePattern)
 	}

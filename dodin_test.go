@@ -1,9 +1,9 @@
 package dodin
 
 import (
-	"testing"
-	"github.com/asarturas/dodin/cloud/fake"
 	"github.com/asarturas/dodin/cloud"
+	"github.com/asarturas/dodin/cloud/fake"
+	"testing"
 )
 
 func Test_dodin_returns_inventory_from_config_file_and_cloud_machines(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 
 func FromMatchingMachines(config GroupConfig, machines []cloud.Machine) Group {
 	newGroup := Group{
-		name: config.Name(),
+		name:      config.Name(),
 		variables: config.Variables(),
 	}
 	for _, machine := range machines {
@@ -19,8 +19,8 @@ func FromMatchingMachines(config GroupConfig, machines []cloud.Machine) Group {
 }
 
 type Group struct {
-	name string
-	members []cloud.Machine
+	name      string
+	members   []cloud.Machine
 	variables map[string]string
 }
 

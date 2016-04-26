@@ -7,9 +7,9 @@ import (
 func Test_intentory_string_representation_is_ansible_inventory_config(t *testing.T) {
 	inventory := Inventory{
 		groups: map[string]InventoryGroup{
-			"test1": InventoryGroup{
+			"test1": {
 				Hosts: []string{"host11", "host12"},
-				Vars: map[string]string{"variable": "value"},
+				Vars:  map[string]string{"variable": "value"},
 			},
 		},
 	}

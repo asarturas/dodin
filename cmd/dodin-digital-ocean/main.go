@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/asarturas/dodin"
-	"os"
-	"github.com/asarturas/dodin/cloud/do"
 	"fmt"
+	"github.com/asarturas/dodin"
+	"github.com/asarturas/dodin/cloud/do"
+	"os"
 )
 
 func main() {
