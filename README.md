@@ -1,4 +1,5 @@
 [![Circle CI](https://circleci.com/gh/asarturas/dodin/tree/master.svg?style=svg)](https://circleci.com/gh/asarturas/dodin/tree/master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/asarturas/dodin)](https://goreportcard.com/report/github.com/asarturas/dodin)
 # dodin - dynamic inventory provider for Ansible
 
 Currently only Digital Ocean is supported, but contributions are welcome to enable it for other providers too. Ping me and I will help you to start up the development environment.
